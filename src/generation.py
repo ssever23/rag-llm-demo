@@ -3,7 +3,7 @@ import nltk
 import yaml
 import sys
 
-# Method to load the config file which contains the API key
+# Load the config file which contains the API key
 def load_config(config_path='/home/ssever/rag-llm-demo/config/config.yaml'):
     try:
         with open(config_path, 'r') as file:
@@ -36,9 +36,9 @@ def display_response(response):
 
 def main():
     # Initialize NLTK
-    nltk.download('punkt')
+    nltk.download('punkt', quiet=True)
     
-    # Load configuration and generate response
+    # Load api-key and generate response
     config = load_config()
     api_key = config['api']['key']
     prompt = "What's the weather like?"
